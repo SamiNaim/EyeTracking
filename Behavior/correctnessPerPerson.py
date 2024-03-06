@@ -1,8 +1,6 @@
 import os
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib import rc
 
 path = "C:/Users/User/Desktop/Uni/Bachelorarbeit/Analysis/PlayGround"
 raw_data = {'correct': [0, 0, 0, 0], 'semiCorrect': [0, 0, 0, 0],'wrong': [0, 0, 0, 0],'notKnow': [0, 0, 0, 0]}

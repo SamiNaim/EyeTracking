@@ -1,9 +1,6 @@
 import os
 import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.stats import friedmanchisquare
-from matplotlib import rc
+from scipy.stats import kruskal
 from scipy.stats import chi2
 
 path = "C:/Users/User/Desktop/Uni/Bachelorarbeit/Analysis/PlayGround"
@@ -188,12 +185,10 @@ group2 = [raw_data[key][1] for key in raw_data]
 group3 = [raw_data[key][2] for key in raw_data]
 group4 = [raw_data[key][3] for key in raw_data]
 
-# Perform Friedman test
-f_statistic, p_value = friedmanchisquare(group1, group2, group3, group4)
-
-# Print results
-print("Friedman Test F-statistic:", f_statistic)
-print("P-value:", p_value)
+statistic_k, p_value_k = kruskal(group1, group2, group3, group4)
+print("Kruskal-Wallis Test:")
+print("Statistic:", statistic_k)
+print("p-value:", p_value_k)
 
 freedom = len(group1) - 1
 alpha = 0.05

@@ -1,9 +1,6 @@
 import os
 import pandas as pd
-from scipy import stats
 import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib import rc
 from scipy.stats import shapiro
 from scipy.stats import bartlett
 from scipy.stats import f_oneway
@@ -104,6 +101,14 @@ print("Mean:", mean_value)
 print("Standard Deviation:", sd_value)
 print("Minimum:", min_value)
 print("Maximum:", max_value)
+
+# Perform one-way ANOVA
+statistic, p_value = f_oneway(stcs_array, cas_array, cos_array, ras_array)
+
+# Print the results
+print("One-way ANOVA:")
+print("Statistic:", statistic)
+print("p-value:", p_value)
 
 '''
 print("Shapiro-Wilk Test for CaS:")
